@@ -35,22 +35,22 @@ const ProfileSchema = new Schema({
   githubusername: {
     type: String
   },
-  experiance: [
+  experience: [
     {
       title: {
         type: String,
-        require: true
+        required: true
       },
       company: {
         type: String,
-        require: true
+        required: true
       },
       location: {
         type: String
       },
       from: {
         type: Date,
-        require: true
+        required: true
       },
       to: {
         type: Date
@@ -60,8 +60,7 @@ const ProfileSchema = new Schema({
         default: false
       },
       description: {
-        type: String,
-        required: true
+        type: String
       }
     }
   ],
@@ -69,11 +68,11 @@ const ProfileSchema = new Schema({
     {
       school: {
         type: String,
-        require: true
+        required: true
       },
       degree: {
         type: String,
-        require: true
+        required: true
       },
       fieldofstudy: {
         type: String,
@@ -81,7 +80,7 @@ const ProfileSchema = new Schema({
       },
       from: {
         type: Date,
-        require: true
+        required: true
       },
       to: {
         type: Date
@@ -91,8 +90,7 @@ const ProfileSchema = new Schema({
         default: false
       },
       description: {
-        type: String,
-        required: true
+        type: String
       }
     }
   ],
