@@ -7,13 +7,19 @@ import jwt_decode from "jwt-decode";
 export const registerUser = (userData, history) => dispatch => {
   axios
     .post("/api/users/register", userData)
-    .then(res => history.push("/login"))
-    .catch(err =>
+    .then(res => {
+      history.push("/login");
+      dispatch({
+        type: "NO_ERRORS",
+        payload: {}
+      });
+    })
+    .catch(err => {
       dispatch({
         type: GET_ERRORS,
         payload: err.response.data
-      })
-    );
+      });
+    });
 };
 
 //Login - Get User Token
@@ -56,4 +62,8 @@ export const logoutUser = () => dispatch => {
   setAuthToken(false);
   //Set current user to {} which will set isAuthenticated to false
   dispatch(setCurrentUser({}));
+  dispatch({
+    type: "NO_ERRORS",
+    payload: {}
+  });
 };
